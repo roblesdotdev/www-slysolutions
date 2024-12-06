@@ -45,7 +45,8 @@
 			},
 			"nursery": {
 				"recommended": true,
-				"noProcessEnv": "error"
+				"noProcessEnv": "error",
+				"useSortedClasses": "error"
 			}
 		}
 	},
