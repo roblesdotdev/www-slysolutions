@@ -26,7 +26,7 @@
 	},
 	"biome.enabled": true,
 	"editor.defaultFormatter": "biomejs.biome",
-	"[javascript][typescript][typescriptreact][javascriptreact][json][jsonc][vue][astro][svelte][css][graphql]": {
+	"[astro]": {
 		"editor.defaultFormatter": "biomejs.biome"
 	},
 	"typescript.tsdk": "node_modules/typescript/lib",

@@ -1,16 +1,24 @@
 ---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 import '../styles/global.css';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>Astro Basics</title>
+		<title>Sly Soluciones | Servicio Técnico</title>
+		<meta name="description" content="Sly Soluciones ofrece servicio técnico especializado en reparación y mantenimiento de computadoras. Soluciones rápidas, confiables y profesionales.">
+    <meta name="keywords" content="servicio técnico, reparacion pc, reparación de computadoras, mantenimiento informático, soluciones tecnológicas, Sly Soluciones">
 	</head>
-	<body class="antialiased min-h-screen min-w-80">
-		<slot />
+	<body class="antialiased min-h-screen min-w-80 bg-[#f6f6f8]">
+		<div class="grid min-h-screen grid-rows-[auto,1fr,auto]">
+			<Header />
+			<slot />
+			<Footer />
+		</div>
 	</body>
 </html>
