@@ -1,15 +1,20 @@
 {
-  "name": "www-slysolutions",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "astro": "^5.0.3"
-  },
-  "packageManager": "pnpm@9.15.0"
+	"name": "www-slysolutions",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"check": "biome check .",
+		"check:fix": "biome check --fix ."
+	},
+	"dependencies": {
+		"astro": "^5.0.3"
+	},
+	"packageManager": "pnpm@9.15.0",
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4"
+	}
 }
