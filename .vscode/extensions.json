@@ -1,8 +1,8 @@
 {
-  "recommendations": [
-    "astro-build.astro-vscode",
-    "biomejs.biome",
-    "redhat.vscode-yaml"
-  ],
-  "unwantedRecommendations": []
+	"recommendations": [
+		"astro-build.astro-vscode",
+		"biomejs.biome",
+		"redhat.vscode-yaml"
+	],
+	"unwantedRecommendations": []
 }
