@@ -1,8 +1,8 @@
 pre-commit:
   parallel: true
   commands:
-    check:
-      run: pnpm run check --fix --no-errors-on-unmatched
+    format:
+      run: pnpm format
       stage_fixed: true
     typecheck:
       run: pnpm astro check

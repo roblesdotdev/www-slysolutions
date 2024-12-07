@@ -1,39 +1,18 @@
 {
-	"editor.formatOnSave": true,
-	"editor.formatOnType": false,
-	"editor.renderWhitespace": "all",
-	"editor.rulers": [80, 120],
-	"editor.codeActionsOnSave": {
-		"source.fixAll": "always",
-		"source.organizeImports": "never",
-		"source.organizeImports.biome": "always",
-		"quickfix.biome": "always"
-	},
-	"eslint.enable": false,
-	"prettier.enable": false,
-	"editor.insertSpaces": false,
-	"editor.detectIndentation": false,
-	"editor.tabSize": 2,
-	"editor.trimAutoWhitespace": true,
-	"workbench.colorCustomizations": {
-		"editorWhitespace.foreground": "#333"
-	},
-	"files.trimTrailingWhitespace": true,
-	"files.trimTrailingWhitespaceInRegexAndStrings": true,
-	"files.trimFinalNewlines": true,
-	"[yaml]": {
-		"editor.defaultFormatter": "redhat.vscode-yaml"
-	},
-	"biome.enabled": true,
-	"editor.defaultFormatter": "biomejs.biome",
-	"[astro]": {
-		"editor.defaultFormatter": "biomejs.biome"
-	},
-	"typescript.tsdk": "node_modules/typescript/lib",
-	"[javascript]": {
-		"editor.defaultFormatter": "biomejs.biome"
-	},
-	"[typescript]": {
-		"editor.defaultFormatter": "biomejs.biome"
-	}
+  "editor.formatOnSave": true,
+  "editor.formatOnType": false,
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [80, 120],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always",
+    "source.organizeImports": "never"
+  },
+  "eslint.enable": false,
+  "prettier.enable": true,
+  "biome.enabled": false,
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
