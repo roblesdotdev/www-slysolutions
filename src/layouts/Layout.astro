@@ -2,6 +2,7 @@
 import { ClientRouter } from 'astro:transitions'
 import Footer from '~/components/Footer.astro'
 import Header from '~/components/Header.astro'
+import '@fontsource-variable/dm-sans'
 import '~/styles/global.css'
 ---
 
@@ -22,7 +23,7 @@ import '~/styles/global.css'
     />
     <ClientRouter />
   </head>
-  <body class="min-h-screen min-w-80 bg-[#f6f6f8] antialiased">
+  <body>
     <div class="grid min-h-screen grid-rows-[auto,1fr,auto]">
       <Header />
       <slot />
