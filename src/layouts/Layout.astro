@@ -31,3 +31,40 @@ import '~/styles/global.css'
     </div>
   </body>
 </html>
+
+<style is:global>
+  @supports selector(::-webkit-scrollbar) {
+    @media (hover: hover) {
+      ::-webkit-scrollbar {
+        width: 8px;
+        border-radius: 8px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: theme('colors.fg.muted / 30%');
+        border: 2px solid transparent;
+        background-clip: content-box;
+      }
+
+      ::-webkit-scrollbar-thumb:active {
+        background-color: theme('colors.fg.muted / 50%');
+      }
+
+      ::-webkit-scrollbar-track {
+        background: theme('colors.canvas.secondary');
+      }
+
+      ::-webkit-scrollbar-corner {
+        background: theme('colors.canvas.secondary');
+      }
+    }
+  }
+
+  @supports not selector(::-webkit-scrollbar) {
+    * {
+      scrollbar-color: theme('colors.accent.DEFAULT / 50%') transparent;
+      scrollbar-width: thin;
+    }
+  }
+</style>

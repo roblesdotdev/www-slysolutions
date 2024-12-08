@@ -15,12 +15,12 @@ export default {
           secondary: 'hsl(var(--canvas-secondary))',
         },
         fg: {
-          DEFAULT: 'hsl(var(--fg-default))',
-          muted: 'hsl(var(--fg-muted))',
+          DEFAULT: 'hsl(var(--fg-default) / <alpha-value>)',
+          muted: 'hsl(var(--fg-muted) / <alpha-value>)',
         },
         accent: {
-          DEFAULT: 'hsl(var(--accent-default))',
-          variant: 'hsl(var(--accent-variant))',
+          DEFAULT: 'hsl(var(--accent-default) / <alpha-value>)',
+          variant: 'hsl(var(--accent-variant) / <alpha-value>)',
         },
       },
     },
