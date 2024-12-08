@@ -11,9 +11,24 @@
 @layer base {
   :root {
     color-scheme: dark;
+
+    /*
+    THEME
+    */
+    --black: 260 15% 8%;
+    --canvas-primary: 266 18% 8%;
+    --canvas-secondary: 264 9% 10%;
+    --fg-default: 59 27% 71%;
+    --fg-muted: 58 15% 59%;
+    --accent-default: 65 100% 79%;
+    --accent-variant: 65 57% 63%;
+  }
+
+  ::selection {
+    @apply bg-accent text-black;
   }
 
   body {
-    @apply min-h-screen min-w-80 bg-[#131017] text-[#CAC9A2] antialiased;
+    @apply min-h-screen min-w-80 bg-canvas-primary text-fg antialiased;
   }
 }
