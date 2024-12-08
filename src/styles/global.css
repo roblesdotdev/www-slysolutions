@@ -9,7 +9,11 @@
 }
 
 @layer base {
+  :root {
+    color-scheme: dark;
+  }
+
   body {
-    @apply min-h-screen min-w-80 bg-[#FAE9D4] text-[#444] antialiased;
+    @apply min-h-screen min-w-80 bg-[#131017] text-[#CAC9A2] antialiased;
   }
 }
