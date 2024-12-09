@@ -1,3 +1,35 @@
+---
+import { Icon } from 'astro-icon/components'
+import ServiceCard from '~/components/ServiceCard.astro'
+
+const services = [
+  {
+    title: 'Computadoras & Laptops',
+    description:
+      'Reparamos, actualizamos y optimizamos tus dispositivos, ofreciendo un servicio rápido, confiable y profesional.',
+    icon: 'computer',
+  },
+  {
+    title: 'Respaldo de datos',
+    description:
+      'Protegemos tus datos con soluciones de respaldo y recuperación rápidas, seguras y adaptadas a tus necesidades.',
+    icon: 'database',
+  },
+  {
+    title: 'Privacidad & Seguridad',
+    description:
+      'Refuerza tu privacidad y seguridad con soluciones avanzadas para proteger tus datos y dispositivos.',
+    icon: 'shield-check',
+  },
+  {
+    title: 'Wi-Fi & Redes',
+    description:
+      'Configuramos y mejoramos tus redes para ofrecer una conexión rápida, segura y sin interrupciones.',
+    icon: 'network',
+  },
+]
+---
+
 <section class="container grid pt-24 md:pt-64 xl:grid-cols-[560px,1fr]">
   <header class="flex flex-col gap-4">
     <h1
@@ -14,9 +46,6 @@
     </p>
   </header>
   <ul class="mt-12 grid gap-4 md:grid-cols-2 xl:mt-0">
-    <li class="h-80 w-full bg-canvas-secondary"></li>
-    <li class="h-80 w-full bg-canvas-secondary"></li>
-    <li class="h-80 w-full bg-canvas-secondary"></li>
-    <li class="h-80 w-full bg-canvas-secondary"></li>
+    {services.map(service => <ServiceCard service={service} />)}
   </ul>
 </section>
