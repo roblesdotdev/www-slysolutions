@@ -1,3 +1,35 @@
+---
+import { Icon } from 'astro-icon/components'
+
+const faqs = [
+  {
+    question: '¿Qué tipos de servicios ofrecen?',
+    answer:
+      'Ofrecemos reparaciones de computadoras, mantenimiento preventivo, optimización de sistemas, eliminación de virus, recuperación de datos y más.',
+  },
+  {
+    question: '¿Cómo puedo solicitar un servicio?',
+    answer:
+      'Puedes solicitar un servicio a través de nuestro formulario en línea, llamando o enviándonos un correo electrónico.',
+  },
+  {
+    question: '¿Cuánto tiempo tardan?',
+    answer:
+      'El tiempo de reparación depende del tipo de problema. Generalmente, entre 24 a 48 horas.',
+  },
+  {
+    question: '¿Cuál es el costo de los servicios?',
+    answer:
+      'El costo varía dependiendo del servicio. Ofrecemos presupuestos personalizados.',
+  },
+  {
+    question: '¿Dónde ofrecen atención?',
+    answer:
+      'Ofrecemos atención en nuestra tienda física y a domicilio, dependiendo de tu ubicación.',
+  },
+]
+---
+
 <section class="container grid pt-24 md:pt-64 xl:grid-cols-[560px,1fr]">
   <header class="flex flex-col gap-4">
     <h1
@@ -14,11 +46,72 @@
     </p>
   </header>
   <ul class="mt-12 flex flex-col gap-4 xl:mt-0">
-    <li class="h-24 w-full bg-canvas-secondary"></li>
-    <li class="h-24 w-full bg-canvas-secondary"></li>
-    <li class="h-24 w-full bg-canvas-secondary"></li>
-    <li class="h-24 w-full bg-canvas-secondary"></li>
-    <li class="h-24 w-full bg-canvas-secondary"></li>
-    <li class="h-24 w-full bg-canvas-secondary"></li>
+    {
+      faqs.map(faq => (
+        <li class="w-full rounded-[4px] bg-canvas-secondary">
+          <button
+            class="faq-question flex w-full items-center justify-between p-6"
+            aria-expanded="false"
+            aria-controls="1"
+          >
+            <span class="text-start text-lg">{faq.question}</span>
+            <Icon
+              name="plus"
+              class="size-6 transform transition-transform duration-300"
+            />
+          </button>
+          <div
+            class="faq-answer max-h-0 transform overflow-hidden opacity-0 transition-all duration-300 ease-in-out"
+            id="answer-1"
+          >
+            <p class="px-6 pb-6 text-fg-muted">{faq.answer}</p>
+          </div>
+        </li>
+      ))
+    }
   </ul>
 </section>
+
+<script>
+  import { $, $$ } from '~/lib/dom-selector'
+
+  document.addEventListener('astro:page-load', () => {
+    const buttons = $$('.faq-question')
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const answer = btn.nextElementSibling
+        const icon = btn.querySelector('svg')
+
+        buttons.forEach(otherToggle => {
+          if (otherToggle !== btn) {
+            const otherContent = otherToggle.nextElementSibling
+            const otherIcon = otherToggle.querySelector('svg')
+
+            otherToggle.setAttribute('aria-expanded', 'false')
+            otherContent?.classList.remove('active')
+            otherIcon?.classList.remove('rotate-45')
+          }
+        })
+
+        const isExpanded = btn.getAttribute('aria-expanded') === 'true'
+        btn.setAttribute('aria-expanded', (!isExpanded).toString())
+
+        if (isExpanded) {
+          answer?.classList.remove('active')
+          icon?.classList.remove('rotate-45')
+        } else {
+          answer?.classList.add('active')
+          icon?.classList.add('rotate-45')
+        }
+      })
+    })
+  })
+</script>
+
+<style>
+  .faq-answer.active {
+    opacity: 1;
+    max-height: min-content;
+  }
+</style>
